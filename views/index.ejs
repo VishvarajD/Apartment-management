@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row name mb-3 p-3">
+                <div class="col-4"></div>
+                <div class="col-4 text-center">Apartment Management</div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid ">
+        <h2 class="">Write tenant info here </h2>
+        <form action="/tenant" method="post">
+            <div class="row ">
+            <input type="text" class="col-4 mx-4 mt-4" placeholder="Tenant Name" name="tname" required>
+            <input type="text" class="col-4 mx-4 mt-4" placeholder="Apartment Number" name="tnumber" required>     
+    </div>
+     <input type="submit" class="btn btn-primary mb-4 mx-4 mt-2" value="create task">
+
+        </form> <!-- from end -->  
+       
+    </div>
+</body>
+</html>
