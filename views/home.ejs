@@ -44,6 +44,10 @@
     <tr class="myborder">
         <th><%= t.ownerName %></th>
         <th><%= t.ownerNumber%></th>
+        <form action="/delete/<%= t._id %>" method="POST" style="display:inline;">
+            <button type="submit" class="tdelete">Delete</button>
+         
+        </form>
     </tr>
     <%  }); %>
 
@@ -61,6 +65,10 @@
     <tr class="myborder">
         <th><%= e.tenantName %></th>
         <th><%= e.tenantNumber%></th>
+        <form action="/delete/<%= e._id %>" method="POST" style="display:inline;">
+            <button type="submit" class="tdelete">Delete</button>
+         
+        </form>
     </tr>
     <%  }); %>
    </table>

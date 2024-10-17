@@ -74,5 +74,13 @@ const connectDB = async () => {
     
     res.redirect('/');
   });
+  app.post('/delete/:name',async (req,res)=>{
+    await ownerInfo.findByIdAndDelete(req.params.name);
+      res.redirect('/');
+  })
+  app.post('/delete/:sanidhya',async (req,res)=>{
+    await tenantInfo.findByIdAndDelete(req.params.sanidhya);
+      res.redirect('/');
+  })
 
   app.listen(`${port}`,)
