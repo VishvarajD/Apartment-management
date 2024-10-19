@@ -1,0 +1,14 @@
+*{
+    background-color: #332941;
+}
+.myborder{
+    border: 2px solid black;
+}
+h2{
+    background-color: #7071E8;
+    border-bottom: 2px solid wheat;
+    
+}
+input{
+    background-color: #D0BFFF;
+}
