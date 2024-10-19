@@ -71,16 +71,17 @@ const connectDB = async () => {
     const {oname ,onumber} = req.body;
     const newTask1 = new ownerInfo({ ownerName: oname, ownerNumber:onumber });
     await newTask1.save();
-    
     res.redirect('/');
   });
-  app.post('/delete/:name',async (req,res)=>{
+  app.post('/delete-owner/:name',async (req,res)=>{
     await ownerInfo.findByIdAndDelete(req.params.name);
       res.redirect('/');
   })
-  app.post('/delete/:sanidhya',async (req,res)=>{
+  app.post('/delete-tenant/:sanidhya',async (req,res)=>{
     await tenantInfo.findByIdAndDelete(req.params.sanidhya);
       res.redirect('/');
   })
 
-  app.listen(`${port}`,)
+  app.listen(`${port}`,()=>{
+    console.log(`Server running on port ${port}`); 
+  })

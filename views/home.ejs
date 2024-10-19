@@ -44,10 +44,11 @@
     <tr class="myborder">
         <th><%= t.ownerName %></th>
         <th><%= t.ownerNumber%></th>
-        <form action="/delete/<%= t._id %>" method="POST" style="display:inline;">
+        <th><form action="/delete-owner/<%= t._id %>" method="POST">
             <button type="submit" class="tdelete">Delete</button>
          
-        </form>
+        </form></th>
+        
     </tr>
     <%  }); %>
 
@@ -60,15 +61,17 @@
     <tr>
         <th>Tenant Name</th>
         <th>ApartMent Number</th>
+        
     </tr>
     <% tasks.forEach((e) => {  %>
     <tr class="myborder">
         <th><%= e.tenantName %></th>
         <th><%= e.tenantNumber%></th>
-        <form action="/delete/<%= e._id %>" method="POST" style="display:inline;">
+        <th> <form action="/delete-tenant/<%= e._id %>" method="POST" style="display:inline;">
             <button type="submit" class="tdelete">Delete</button>
          
-        </form>
+        </form></th>
+       
     </tr>
     <%  }); %>
    </table>
