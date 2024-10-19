@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">  
     <style>
         .myborder{
             border: 2px solid black;
@@ -12,30 +13,44 @@
         }
         input{
             background-color: rgb(255, 0, 0);
-            color: white;
+            /* color: white; */
             border-radius: 10px;
         }
         h1{
             padding-top: 20px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgb(0, 0, 0);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         table{
             margin-top: 20px;
+            background-color: #8C6A5D;
+            color: #D8D2C2;
+        }
+        header{
+            background-color: #B17457;
+            color: #FAF7F0;
+        }
+        body{
+
+            background-color: #D8D2C2;
         }
        
     </style>
 </head>
+<header>
+    <h1 class="text-center">Apartment Management</h1>
+</header>
 <body>
-    <header>
-        <h1 class="text-center">Apartment Management</h1>
-    </header>
   <!-- table for tenant -->
-   <div class="container">
+   <div class="container body">
     <div class="row">
+        <div class="text mt-3">
+         OWNER TABLE   
+        </div>
    
 <!-- table for owner -->
-   <table class="col-5 myborder text-center m-2">
+   <table class="col-5 myborder text-center m-2 w-50">
     <tr class="">
         <th>Owner Name</th>
         <th>ApartMent Number</th>
@@ -45,8 +60,7 @@
         <th><%= t.ownerName %></th>
         <th><%= t.ownerNumber%></th>
         <th><form action="/delete-owner/<%= t._id %>" method="POST">
-            <button type="submit" class="tdelete">Delete</button>
-         
+            <button type="submit" class="tdelete"><i class="bi bi-trash"></i></button>
         </form></th>
         
     </tr>
@@ -54,10 +68,15 @@
 
    </table>
    <form action="/owner">
-    <input type="submit" value="Add owner Info">
+    
+    <input type="submit" class="btn btn-danger" value="Add owner Info">
 </form>
 
-   <table class="col-5 myborder text-center m-2">
+<!-- <div class="table mt-5"> -->
+    <div class="text mt-5">
+        TENANT TABLE   
+       </div>
+   <table class="col-5 myborder text-center m-2  w-50">
     <tr>
         <th>Tenant Name</th>
         <th>ApartMent Number</th>
@@ -68,15 +87,16 @@
         <th><%= e.tenantName %></th>
         <th><%= e.tenantNumber%></th>
         <th> <form action="/delete-tenant/<%= e._id %>" method="POST" style="display:inline;">
-            <button type="submit" class="tdelete">Delete</button>
+            <button type="submit" class="tdelete"><i class="bi bi-trash"></i></button>
          
         </form></th>
        
     </tr>
     <%  }); %>
    </table>
+<!-- </div> -->
    <form action="/tenant">
-    <input type="submit" value="Add tenant Info">
+    <input type="submit" class="btn btn-danger" value="Add tenant Info">
 </form>
 
 </div>

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
 const app = express();
-const port = 3300;
+const port = 3003;
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
