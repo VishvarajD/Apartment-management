@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/owner.css">
+    
 </head>
 <body>
-    <header>
-        <div class="container-fluid">
-            <div class="row name mb-3 p-3">
-                <div class="col-4"></div>
-                <div class="col-4 text-center">Apartment Management</div>
-            </div>
-        </div>
-    </header>
     <div class="container-fluid ">
-        <h2 class="">Write tenant info here </h2>
-        <form action="/tenant" method="post">
-            <div class="row ">
-            <input type="text" class="col-4 mx-4 mt-4" placeholder="Tenant Name" name="tname" required>
-            <input type="text" class="col-4 mx-4 mt-4" placeholder="Apartment Number" name="tnumber" required>     
-    </div>
-     <input type="submit" class="btn btn-primary mb-4 mx-4 mt-2" value="create task">
+        <div class="row ">
+        <h2 class="p-3 text-center">Write tenant info here </h2>
+            <div class="col-12 mx-5 ">
 
-        </form> <!-- from end -->  
-       
+           
+     
+        <form action="/tenant" method="post" class=" px-5">
+            <div class="row ">
+            <input type="text" class="col-4 mx-4 mt-4 p-1" placeholder="Tenant Name" name="tname" required>
+            </div>
+            <div class="row">
+            <input type="text" class="col-4  mx-4 mt-4 p-1" placeholder="Apartment Number" name="tnumber" required>     
+            </div>
+            <input type="submit" class="btn btn-primary col-1 mx-4 mt-5 " value="create Tenant">
     </div>
+
+        </form> <!-- from end --> 
+    </div>
+    </div> </div>
+       
 </body>
 </html>
