@@ -82,6 +82,49 @@ const connectDB = async () => {
       res.redirect('/');
   })
 
+
+  app.get('/edit/edit-tenant/:filename', async (req, res) => {
+  
+      const task = await tenantInfo.findById(req.params.filename);
+     
+        res.render('edit.ejs', {task});
+       
+  });
+  
+  
+  app.post('/edit/edit-tenant/:filename', async (req, res) => {
+    try {
+      const { tnameNew, tnumberNew } = req.body; 
+      await tenantInfo.findByIdAndUpdate(req.params.filename, {
+        tenantName: tnameNew,
+        tenantNumber: tnumberNew,
+      });
+      res.redirect('/'); 
+    } catch (err) {
+      console.error(err);
+      res.redirect('/'); 
+    }
+  });
+  app.get('/edit/edit-owner/:filename', async (req, res) => {
+   
+      const task = await ownerInfo.findById(req.params.filename);
+     
+        res.render('edit-owner.ejs', { task }); 
+     
+  });
+  
+  
+  app.post('/edit/edit-owner/:filename', async (req, res) => {
+      const { onameNew, onumberNew } = req.body; 
+      await ownerInfo.findByIdAndUpdate(req.params.filename, {
+        ownerName: onameNew,
+        ownerNumber: onumberNew,
+      });
+      res.redirect('/');
+   
+  });
+  
+
   app.listen(`${port}`,()=>{
     console.log(`Server running on port ${port}`); 
   })

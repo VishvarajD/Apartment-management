@@ -42,7 +42,7 @@
     <h1 class="text-center">Apartment Management</h1>
 </header>
 <body>
-  <!-- table for tenant -->
+ 
    <div class="container body">
     <div class="row">
         <div class="text mt-3">
@@ -62,6 +62,7 @@
         <th><form action="/delete-owner/<%= t._id %>" method="POST">
             <button type="submit" class="tdelete"><i class="bi bi-trash"></i></button>
         </form></th>
+        <th><a href="/edit/edit-owner/<%=t._id%>">Edit</a></th>
         
     </tr>
     <%  }); %>
@@ -90,7 +91,7 @@
             <button type="submit" class="tdelete"><i class="bi bi-trash"></i></button>
          
         </form></th>
-        <th><a href="/edit/<%=e._id%>">Edit</a></th>
+        <th><a href="/edit/edit-tenant/<%=e._id%>">Edit</a></th>
        
     </tr>
     <%  }); %>
